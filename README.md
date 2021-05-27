@@ -66,13 +66,13 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 * <img src=EntitiesName.PNG></img>
 
-  *	`C:\Program Files\Epic Games\UE_4.25\Engine\Binaries\Win64` 위치에 해당`json`파일을 넣게되면 `포탈`에 `Entities`가 추가된다.
+  * `C:\Program Files\Epic Games\UE_4.25\Engine\Binaries\Win64` 위치에 해당`json`파일을 넣게되면 `포탈`에 `Entities`가 추가된다.
 
 
 
 * **Luis train and publish하기**
 
-  *	`Luis 포탈`에서 우선 리소스를 할당 해야한다. 해당 프로젝트에서는 `UE4`에서 리소스를 할당 할 수 없다. 따라서 직접 `포탈`로 가서 할당을 해주어야한다.
+  * `Luis 포탈`에서 우선 리소스를 할당 해야한다. 해당 프로젝트에서는 `UE4`에서 리소스를 할당 할 수 없다. 따라서 직접 `포탈`로 가서 할당을 해주어야한다.
 
   * `UE4`에서 `train`을 하게 될 경우 추가적인 시간이 걸리게 되는데 해당 시간은 플레이에 방해가 될 수 있으므로 추가하지 않았다. 따라서 `포탈`을 이용하여 `train`을 하는것을 추천한다.
 
@@ -86,7 +86,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 * <img src=publish.PNG></img>
 
-  *	 `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. `publish`를 하지 않으면 추가한 `train`부분을 사용할 수 없다.
+  * `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. `publish`를 하지 않으면 추가한 `train`부분을 사용할 수 없다.
 
 * **Use Scoring and TopIntent**
 
@@ -185,7 +185,8 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 ## LUIS Intent 확인방법
 
-​	`UE` `출력Log창`을 띄어두면 해당 로그를 `Log python`를 통하여 확인할 수 있다.  주의 해야할 점은 `Entities`의 2번째 의도에 대해 접근을 하기 때문에 2번째의 의도를 이용하여 UE에서 사용을 해야한다. 만약 `Entity`의 이름이 `Pizza`이고 `Pizza`안에 `Size`, `Price`등을 넣게되면 사용하는 블루프린트는 `Pizza`의 `Size`나 `Price`에 접근하게 된다. `Size`안에 `Small` ,` Medium`, `Large`를 넣게 되어도 인식을 할 수 가 없다.
+ `UE` `출력Log창`을 띄어두면 해당 로그를 `Log python`를 통하여 확인할 수 있다.  주의 해야할 점은 `Entities`의 2번째 의도에 대해 접근을 하기 때문에 2번째의 의도를 이용하여 UE에서 사용을 해야한다. 만약 `Entity`의 이름이 `Pizza`이고 `Pizza`안에 `Size`, `Price`등을 넣게되면 사용하는 블루프린트는 `Pizza`의 `Size`나 `Price`에 접근하게 된다. `Size`안에 `Small` ,` Medium`, `Large`를 넣게 되어도 인식을 할 수 가 없다.
+* <img src=pythonLog.PNG></img>
 ***
 # Resources
 
