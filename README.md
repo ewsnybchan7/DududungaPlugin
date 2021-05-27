@@ -180,7 +180,7 @@ Finished를 이용하여 가져온 데이터를 확인할 수 있다.
     * `On Mike`를 False로 바꿔주어 음성인식이 끝났
 
 
-■**LUIS Intent 확인방법**
+## LUIS Intent 확인방법
 
 ​	`UE` `출력Log창`을 띄어두면 해당 로그를 `Log python`를 통하여 확인할 수 있다.  주의 해야할 점은 `Entities`의 2번째 의도에 대해 접근을 하기 때문에 2번째의 의도를 이용하여 UE에서 사용을 해야한다. 만약 `Entity`의 이름이 `Pizza`이고 `Pizza`안에 `Size`, `Price`등을 넣게되면 사용하는 블루프린트는 `Pizza`의 `Size`나 `Price`에 접근하게 된다. `Size`안에 `Small` ,` Medium`, `Large`를 넣게 되어도 인식을 할 수 가 없다.
 ***
