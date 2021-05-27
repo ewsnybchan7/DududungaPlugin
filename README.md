@@ -52,7 +52,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
   * <img src=entities upload.PNG></img>
 
 
-  * `Intent`를 추가하는 방법은 해당 블루프린트 노드를 추가하고 노드에   FString 값을 넣어 해당 값으로` Intent`를 추가한다.
+  * `Intent`를 추가하는 방법은 해당 블루프린트 노드를 추가하고 노드에 FString 값을 넣어 해당 값으로` Intent`를 추가한다.
 
 * <img src=IntentName.PNG></img>
 
@@ -74,7 +74,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
   * `Luis 포탈`에서 우선 리소스를 할당 해야한다. 해당 프로젝트에서는 `UE4`에서 리소스를 할당 할 수 없다. 따라서 직접 `포탈`로 가서 할당을 해주어야한다.
 
-  * `UE4`에서 `train`을 하게 될 경우 추가적인 시간이 걸리게 되는데 해당 시간은 플레이에 방해가 될 수 있으므로 추가하지 않았다. 따라서 `포탈`을 이용하여 `train`을 하는것을 추천한다.
+  * `UE4`에서 `train`을 하게 될 경우 추가적인 시간이 걸리게 되는데 해당 시간은 플레이에 방해가 될 수 있으므로 추가하지 않았다. 따라서 `포탈`을 이용하여 `train`을 해야 한다.
 
 * <img src=portal.PNG></img>
 
