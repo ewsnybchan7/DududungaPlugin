@@ -85,7 +85,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 ​	 `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. publish를 하지 않으면 추가한 train부분을 사용할 수 없다.
 
-■ **Use Scoring and TopIntent **
+■ **Use Scoring and TopIntent**
 
 <img src=ScoringBlueprint.PNG></img>
 
