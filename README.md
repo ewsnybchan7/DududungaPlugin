@@ -28,7 +28,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 ​	변수를 추가에 성공했다면 해당 `Luis Actor`의 블루프린트 노드를 사용할 수 있다.
 
-​	* **Azure App 생성하기**
+* **Azure App 생성하기**
 
 ​	`Luis`변수를 추가하면 `LuisCreateApp`노드를 사용할 수 있다. 해당 노드를 사용하고 나서 항상 `RunLuisCognition`을 사용하여 마무리를 해야한다.
 
