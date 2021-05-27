@@ -15,7 +15,18 @@ Integrated Azure Speech cognitive service into Unreal Engine 4
 # How it works
 ## Unreal Engine Python
 ## Azure Cognitive Services: Speech
-## Azure Cognitive Services: LUIS
+## Azure cognitive service : LUIS
+**python을 쓴 이유**
+
+* Speech나 NLP같은 경우 머신러닝을 사용하게 된다. 머신러닝을 사용하게 될 경우 가장 많이 사용되는 언어는 python이므로 LUIS, Azure Speech의 Client사용에 있어 공통적으로 필요한 언어인 python을 사용하였다.
+
+**UnrealEnginePython Plugin 과 Azure**
+
+* UE에서도 python script를 지원하지만 Azure에서 사용하는 python의 설치를 위해서는 pip 21.1이상의 버전이 필요한데 UE에서는 20.1까지밖에 지원을 하지않아 라이브러리가 설치가 되지않는다.  UnrealEnginePython plugin을 이용하면 python과 UE를 연결할수 있고 이 plugin은 3.6버전의 python을 이용하기 때문에  Azure 라이브러리를 설치할 수 있어 사용하였다.
+
+* python script를 살펴보면 설치한 `Azure 라이브러리`를 import 하여준다.  그 다음 UE에서 받아올 데이터들을 다 class의 변수로 저장을 한뒤 UEPython plugin을 이용하여 해당 변수와의 상호작용을 한다. script에서는 key, endpoint 그리고 발화문을 이용하게 되고 사용자는 블루프린트를 이용하여 해당 데이터을 넣거나 UE 디테일 창을 이용하여 해당하는 데이터를 넣게 된다. 
+* 참조: [LUIS Docs]( https://docs.microsoft.com/ko-kr/azure/cognitive-services/luis/client-libraries-rest-api?tabs=windows&pivots=programming-language-python)
+
 
 ***
 # Installation
