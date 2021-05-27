@@ -22,9 +22,10 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 <img src=luisProperty.PNG></img>
 
 블루프린트로 들어와 LUIS 변수를 추가한다.
+
  <img src=변수추가.PNG></img>
 
-	추가한 변수 유형을 `Luis`로 바꾸고 변수의 기본값을 월드 아웃라이너에 추가한 `Luis Actor` 바꾸어 준다.
+  추가한 변수 유형을 `Luis`로 바꾸고 변수의 기본값을 월드 아웃라이너에 추가한 `Luis Actor` 바꾸어 준다.
 
 * <img src=변수 기본값 설정.PNG></img>
 
