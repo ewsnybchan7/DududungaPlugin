@@ -13,12 +13,69 @@ Integrated Azure Speech cognitive service into Unreal Engine 4
     - [connect to Azure portal](#connect-to-azure-portal)      
 ***
 # How it works
+## Unreal Engine Python
+## Azure Cognitive Services: Speech
+## Azure Cognitive Services: LUIS
 
 ***
 # Installation
 
 ***
 # Getting Started
+## Azure ID 연결
+
+Azure cognitive services를 사용하기 위해서는 [Azure Portal](https://azure.microsoft.com/)에 로그인을 하고, `Speech` 리소스와 `LUIS` 리소스를 생성해야 합니다.
+ㄷㄷㄷㅈ 플러그인에서 speech 서비스를 사용하기 위해 필요한 것은 다음과 같습니다.
+
+ 1. 구독키
+ 2. 엔드포인트 (Custom Model 사용시)
+
+그리고 자연어처리 LUIS 서비스를 사용하기 위해 필요한 것은 다음과 같습니다.
+
+ 1.  병선이 루이스 키 작업
+ 2. 
+ 3. 
+
+### Speech
+AzureSpeechSDK에서 `Speech Recognition` C++ 클래스를 확인할 수 있습니다.
+Speech 서비스를 사용하기 위해 해당 클래스 하나를 생성합니다. 생성한 Speech Recognition의 Property `Settings`에 구독키, 서버 지역, 타겟 언어를 설정합니다.
+
+/////////////settings 사진//////////////
+
+음성 인식을 시작하기 위한 준비는 다 끝났습니다!
+음성 인식을 원하는 블루프린트에서 생성한 `Speech Recognition`을 찾고, 이벤트 처리를 해줍니다. 이벤트는 총 세 가지가 있습니다.
+
+///// 델리게이트 이벤트 /////
+블루프린트에서 호출이 가능하며, 해당 델리게이트에 커스텀 이벤트를 바인딩하여 이벤트 처리를 할 수 있습니다.
+ 1. Start 이벤트 **(필수)**
+////// start 이벤트 연결 사진 /////
+`Start` 이벤트는 음성 인식을 시작할 때 호출되는 이벤트입니다.
+주로 이벤트를 호출하기 전에 음성 인식 중임을 사용자에게 알리기 위한 목적으로 UI, 오브젝트의 변화를 처리하면 됩니다.
+현재는 필수적으로 Start 이벤트를 호출하면, 음성 인식을 시작할 수 있도록 `Run Speech Recognition`를 사용자 레벨에서 호출해야 합니다.
+
+	**Run Speech Recognition**은 실질적으로 음성 인식을 하는 메서드로 어떤 음성 인식을 할 지 설정할 수 있습니다.
+	- `Continuous`: **단일 인식**과 **연속 인식** 중 하나를 선택할 수 있습니다.
+	- `Use Phrase List`: 인식률 향상 기능인 **구 리스트** 기능을 사용할 지 결정합니다.
+	- `Use Custom Model`: 인식률 향상 기능인 **사용자 모델** 기능을 사용할 지 결정합니다.
+
+ 2. Recognizing 이벤트
+//////// recognizing 이벤트 연결 사진
+`Recognizing` 이벤트는 음성 인식 중에 `Run Speech Recognition`을 통해 음성 인식을 재시도할 때 호출되는 이벤트입니다.
+런타임 도중, 사용자에게 음성 인식에 여러 번 접근하는 경우를 막기 위한 용도로 사용하면 됩니다.
+
+ 4. Finish 이벤트
+/////// finish 이벤트 연결 사진
+`Finish` 이벤트는 음성 인식이 끝났을 때 자동으로 호출되는 이벤트로 음성 인식의 결과값과 인식 성공 여부를 전달받을 수 있습니다.
+개발자는 음성 인식이 끝났을 때 UI를 바꾸거나 오브젝트와 상호작용하는 등의 처리를 커스텀 이벤트로 만들고 바인딩하면 됩니다.
+
+	**단일인식**은 Finish 이벤트가 한 번 호출되고, **연속인식**은 여러 번 호출됩니다.
+
+이벤트 처리가 끝났다면 Azure의 음성 인식 서비스를 맘껏 즐기세요!
+
+### LUIS
+
+
+## Blueprint 설명
 ## 키보드 Blueprint 설명
 키보드는 C++로 만들어진 함수들과 언리얼엔진 블루프린트에서 만든 함수들로 구성된다.  C++로 만들어진 `Combine Hangeul Auto Line Break` 함수를 숫자 자판, 영어(또는 한글 자판), 기타 기호 자판(ex. '-', '?')들이 사용하고 나머지 자판들은 다른 함수들을 사용하여 구성된다.
 1. 숫자, 영어, 기타 기호 자판 구성
