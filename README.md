@@ -13,7 +13,8 @@ Integrated Azure Speech cognitive service into Unreal Engine 4
     - [connect to Azure portal](#connect-to-azure-portal)      
 ***
 # How it works
-## UE4블루프린트를 이용하여 Luis사용하기
+## Azure cognitive service : LUIS
+UE4블루프린트를 이용하여 Luis사용하기
 월드 아웃라이너에서 `Luis Actor`를 추가한다.
 Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,` prediction Endpoint`, `AppId`, `TargetLanguage`를 
 블루프린트에서 플레이를 하기 전 `Luis`의 `Property`위치에서 해당 언어를 선택 할 수 있다.
