@@ -131,21 +131,21 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
   * <img src=entities upload.PNG></img>
 
 
-  * `Intent`를 추가하는 방법은 해당 블루프린트 노드를 추가하고 노드에 FString 값을 넣어 해당 값으로` Intent`를 추가한다.
+    *  `Intent`를 추가하는 방법은 해당 블루프린트 노드를 추가하고 노드에 FString 값을 넣어 해당 값으로` Intent`를 추가한다.
 
-* <img src=IntentName.PNG></img>
+  * <img src=IntentName.PNG></img>
 
-  *	`Luis 포탈`에서 `Intent`가 추가된 것을 확인할 수 있다.
+    *	`Luis 포탈`에서 `Intent`가 추가된 것을 확인할 수 있다.
 
-* <img src=UE4AppIntent.PNG></img>
+  * <img src=UE4AppIntent.PNG></img>
 
-  *	`Entities`는 `json`파일을 이용하여 해당 `Entities`를 추가할 수 있다.
+    *	`Entities`는 `json`파일을 이용하여 해당 `Entities`를 추가할 수 있다.
 
-  *	Luis의 `Entities`는 기본적으로 `json`형식으로 이루어져 있다. 따라서  `json` 파일로 해당 `Entities`를 추가한다.
+    *	Luis의 `Entities`는 기본적으로 `json`형식으로 이루어져 있다. 따라서  `json` 파일로 해당 `Entities`를 추가한다.
 
-* <img src=EntitiesName.PNG></img>
+  * <img src=EntitiesName.PNG></img>
 
-  * `C:\Program Files\Epic Games\UE_4.25\Engine\Binaries\Win64` 위치에 해당`json`파일을 넣게되면 `포탈`에 `Entities`가 추가된다.
+    * `C:\Program Files\Epic Games\UE_4.25\Engine\Binaries\Win64` 위치에 해당`json`파일을 넣게되면 `포탈`에 `Entities`가 추가된다.
 
 
 
@@ -155,31 +155,31 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
   * `UE4`에서 `train`을 하게 될 경우 추가적인 시간이 걸리게 되는데 해당 시간은 플레이에 방해가 될 수 있으므로 추가하지 않았다. 따라서 `포탈`을 이용하여 `train`을 해야 한다.
 
-* <img src=portal.PNG></img>
+  * <img src=portal.PNG></img>
 
-  * 해당 `포탈`에서 `publish`도 같이 할 수 있다. `publish`를 하면  사용자가 블루프린트에서 발화문에 대한 점수와 결과를 `LuisUttranceScore`를 이용하여 사용할 수 있게 된다.
+    * 해당 `포탈`에서 `publish`도 같이 할 수 있다. `publish`를 하면  사용자가 블루프린트에서 발화문에 대한 점수와 결과를 `LuisUttranceScore`를 이용하여 사용할 수 있게 된다.
 
-* <img src=trainutterances.PNG></img>
+  * <img src=trainutterances.PNG></img>
 
-  * 해당 사진처럼 `intent`를 학습시키고 `intent`에 있는 `entity`를 지정하여 문장의 의도를 명확히 한다.
+    * 해당 사진처럼 `intent`를 학습시키고 `intent`에 있는 `entity`를 지정하여 문장의 의도를 명확히 한다.
 
-* <img src=publish.PNG></img>
+  * <img src=publish.PNG></img>
 
-  * `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. `publish`를 하지 않으면 추가한 `train`부분을 사용할 수 없다.
+    * `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. `publish`를 하지 않으면 추가한 `train`부분을 사용할 수 없다.
 
 * **Use Scoring and TopIntent**
 
-* <img src=ScoringBlueprint.PNG></img>
+  * <img src=ScoringBlueprint.PNG></img>
 
-  * 사진의 블루프린트 노드를 이용하여 문장의 `TopIntent`와 `Entity Set`에 대한 정보를 다음과 같이 볼 수 있다.
+    * 사진의 블루프린트 노드를 이용하여 문장의 `TopIntent`와 `Entity Set`에 대한 정보를 다음과 같이 볼 수 있다.
 
-* <img src=UseScoring.PNG></img>
+  * <img src=UseScoring.PNG></img>
 
-  * 다음과 같이 노드를 사용한 이후 `Finished` 이벤트를 이용하여 해당 노드의 작업이 끝난 이후 데이터를 가져올 수 있다.
+    * 다음과 같이 노드를 사용한 이후 `Finished` 이벤트를 이용하여 해당 노드의 작업이 끝난 이후 데이터를 가져올 수 있다.
 
-* <img src=pythonLog.PNG></img>
+  * <img src=pythonLog.PNG></img>
 
-  * `Finished`를 이용하여 가져온 데이터를 확인할 수 있다.
+    * `Finished`를 이용하여 가져온 데이터를 확인할 수 있다.
 
 
 ## LUIS Intent 확인방법
