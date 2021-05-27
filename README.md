@@ -28,7 +28,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 ​	변수를 추가에 성공했다면 해당 `Luis Actor`의 블루프린트 노드를 사용할 수 있다.
 
-​	●**Azure App 생성하기**
+​	* **Azure App 생성하기**
 
 ​	`Luis`변수를 추가하면 `LuisCreateApp`노드를 사용할 수 있다. 해당 노드를 사용하고 나서 항상 `RunLuisCognition`을 사용하여 마무리를 해야한다.
 
@@ -42,9 +42,9 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 <img src=luisPortalMakeApp.PNG></img>
 
 
-■**Upload entity  set**
+* **Upload entity  set**
 
-​	●**Intent 와 Entities 추가하기**
+​	* **Intent 와 Entities 추가하기**
 
 <img src=entities upload.PNG></img>
 
@@ -67,7 +67,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 
 
-●**Luis train and publish하기**
+* **Luis train and publish하기**
 
 ​	`Luis 포탈`에서 우선 리소스를 할당 해야한다. 해당 프로젝트에서는 `UE4`에서 리소스를 할당 할 수 없다. 따라서 직접 `포탈`로 가서 할당을 해주어야한다.
 
@@ -85,7 +85,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 ​	 `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. `publish`를 하지 않으면 추가한 `train`부분을 사용할 수 없다.
 
-■ **Use Scoring and TopIntent**
+* **Use Scoring and TopIntent**
 
 <img src=ScoringBlueprint.PNG></img>
 
