@@ -44,7 +44,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 * **Upload entity  set**
 
-​	* **Intent 와 Entities 추가하기**
+* **Intent 와 Entities 추가하기**
 
 <img src=entities upload.PNG></img>
 
