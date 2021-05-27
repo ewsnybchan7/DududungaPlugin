@@ -46,7 +46,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 * **Intent 와 Entities 추가하기**
 
-* <img src=entities upload.PNG></img>
+   <img src=entities upload.PNG></img>
 
 
   * `Intent`를 추가하는 방법은 해당 블루프린트 노드를 추가하고 노드에   FString 값을 넣어 해당 값으로` Intent`를 추가한다.
