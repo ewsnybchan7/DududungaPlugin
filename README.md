@@ -92,6 +92,95 @@ Integrated Azure Speech cognitive service into Unreal Engine 4
     * 단일인식은 `Speech`에서 불러온 `Get Is Continuous`의 값이 False일 경우이다.  
     * `Append String`을 이용해 음성인식 된 String을 결과창에 넣어준다.
     * `On Mike`를 False로 바꿔주어 음성인식이 끝났
+
+##UE4블루프린트를 이용하여 Luis사용하기
+월드 아웃라이너에서 `Luis Actor`를 추가한다.
+Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,` prediction Endpoint`, `AppId`, `TargetLanguage`를 
+블루프린트에서 플레이를 하기 전 `Luis`의 `Property`위치에서 해당 언어를 선택 할 수 있다.
+<img src=luisProperty.PNG></img>
+블루프린트로 들어와 LUIS 변수를 추가한다.
+ <img src=변수추가.PNG></img>
+
+​	추가한 변수 유형을 `Luis`로 바꾸고 변수의 기본값을 월드 아웃라이너에 추가한 `Luis Actor` 바꾸어 준다.
+
+<img src=변수 기본값 설정.PNG></img>
+
+​	변수를 추가에 성공했다면 해당 `Luis Actor`의 블루프린트 노드를 사용할 수 있다.
+
+​	●**Azure App 생성하기**
+
+​	`Luis`변수를 추가하면 `LuisCreateApp`노드를 사용할 수 있다. 해당 노드를 사용하고 나서 항상 `RunLuisCognition`을 사용하여 마무리를 해야한다.
+
+​	해당노드들은 함수 변수에 추가하여 `async task`를 이용하여 `Background`에서 해당 함수를 구동하기 때문에 `RunLuisCognition`을 이용하여 함수 배열을 처리한다.
+
+​	 따라서 해당 블루프린트 노드를 사용하고 난 후 `RunLuisCognition`으로 닫아줘야한다.
+
+<img src=luisCreateApp.PNG></img>
+
+​	해당 노드를 추가하고 `UE4`를 플레이하면  `portal`에 해당` LuisApp`이 추가된걸 확인할 수 있다.
+<img src=luisPortalMakeApp.PNG></img>
+
+
+■**Upload entity  set**
+
+​	●**Intent 와 Entities 추가하기**
+
+<img src=entities upload.PNG></img>
+
+
+​	`Intent`를 추가하는 방법은 해당 블루프린트 노드를 추가하고 노드에   FString 값을 넣어 해당 값으로` Intent`를 추가한다.
+
+<img src=IntentName.PNG></img>
+
+​	`Luis 포탈`에서 `Intent`가 추가된 것을 확인할 수 있다.
+
+<img src=UE4AppIntent.PNG></img>
+
+​	`Entities`는 `json`파일을 이용하여 해당 `Entities`를 추가할 수 있다.
+
+​	Luis의 `Entities`는 기본적으로 `json`형식으로 이루어져 있다. 따라서  `json` 파일로 해당 `Entities`를 추가한다.
+
+<img src=EntitiesName.PNG></img>
+
+​		`C:\Program Files\Epic Games\UE_4.25\Engine\Binaries\Win64` 위치에 해당`json`파일을 넣게되면 `포탈`에 `Entities`가 추가된다.
+
+
+
+●**Luis train and publish하기**
+
+​	`Luis 포탈`에서 우선 리소스를 할당 해야한다. 해당 프로젝트에서는 `UE4`에서 리소스를 할당 할 수 없다. 따라서 직접 `포탈`로 가서 할당을 해주어야한다.
+
+​	`UE4`에서 `train`을 하게 될 경우 추가적인 시간이 걸리게 되는데 해당 시간은 플레이에 방해가 될 수 있으므로 추가하지 않았다. 따라서 `포탈`을 이용하여 `train`을 하는것을 추천한다.
+
+<img src=portal.PNG></img>
+
+​	해당 `포탈`에서 `publish`도 같이 할 수 있다. `publish`를 하면  사용자가 블루프린트에서 발화문에 대한 점수와 결과를 `LuisUttranceScore`를 이용하여 사용할 수 있게 된다.
+
+<img src=trainutterances.PNG></img>
+
+​	해당 사진처럼 `intent`를 학습시키고 `intent`에 있는 `entity`를 지정하여 문장의 의도를 명확히 한다.
+
+<img src=publish.PNG></img>
+
+​	 `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. publish를 하지 않으면 추가한 train부분을 사용할 수 없다.
+
+■ **Use Scoring and TopIntent **
+
+<img src=ScoringBlueprint.PNG></img>
+
+사진의 블루프린트 노드를 이용하여 문장의 TopIntent와 Entity Set에 대한 정보를 다음과 같이 볼 수 있다.
+
+<img src=UseScoring.PNG></img>
+
+다음과 같이 노드를 사용한 이후 `Finished` 이벤트를 이용하여 해당 노드의 작업이 끝난 이후 데이터를 가져올 수 있다.
+
+<img src=pythonLog.PNG></img>
+
+Finished를 이용하여 가져온 데이터를 확인할 수 있다.
+
+■**LUIS Intent 확인방법**
+
+​	`UE` `출력Log창`을 띄어두면 해당 로그를 `Log python`를 통하여 확인할 수 있다.  주의 해야할 점은 `Entities`의 2번째 의도에 대해 접근을 하기 때문에 2번째의 의도를 이용하여 UE에서 사용을 해야한다. 만약 `Entity`의 이름이 `Pizza`이고 `Pizza`안에 `Size`, `Price`등을 넣게되면 사용하는 블루프린트는 `Pizza`의 `Size`나 `Price`에 접근하게 된다. `Size`안에 `Small` ,` Medium`, `Large`를 넣게 되어도 인식을 할 수 가 없다.
 ***
 # Resources
 
