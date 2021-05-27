@@ -120,9 +120,9 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
   *	블루프린트 노드를 사용하고 난 후 `RunLuisCognition`으로 닫아줘야한다.
 
-* <img src=luisCreateApp.PNG></img>
+	* <img src=luisCreateApp.PNG></img>
 
-  *	해당 노드를 추가하고 `UE`를 플레이하면  `탈`에 해당` LuisApp`이 추가된걸 확인할 수 있다.
+  		* 해당 노드를 추가하고 `UE`를 플레이하면  `탈`에 해당` LuisApp`이 추가된걸 확인할 수 있다.
 * <img src=luisPortalMakeApp.PNG></img>
 
 
