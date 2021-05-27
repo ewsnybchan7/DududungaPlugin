@@ -38,7 +38,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 <img src=luisCreateApp.PNG></img>
 
-​	해당 노드를 추가하고 `UE4`를 플레이하면  `portal`에 해당` LuisApp`이 추가된걸 확인할 수 있다.
+​	해당 노드를 추가하고 `UE`를 플레이하면  `탈`에 해당` LuisApp`이 추가된걸 확인할 수 있다.
 <img src=luisPortalMakeApp.PNG></img>
 
 
@@ -83,13 +83,13 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 <img src=publish.PNG></img>
 
-​	 `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. publish를 하지 않으면 추가한 train부분을 사용할 수 없다.
+​	 `publish`를 하게 되면 해당 발화문과 비슷한 유형의 다른 발화문을 의도에 맞게 사용할 수 있게된다. `publish`를 하지 않으면 추가한 `train`부분을 사용할 수 없다.
 
 ■ **Use Scoring and TopIntent**
 
 <img src=ScoringBlueprint.PNG></img>
 
-사진의 블루프린트 노드를 이용하여 문장의 TopIntent와 Entity Set에 대한 정보를 다음과 같이 볼 수 있다.
+사진의 블루프린트 노드를 이용하여 문장의 `TopIntent`와 `Entity Set`에 대한 정보를 다음과 같이 볼 수 있다.
 
 <img src=UseScoring.PNG></img>
 
@@ -97,7 +97,7 @@ Luis 블루프린트의 `Authoring key`, `Prediction Key`, `Authoring Endpoint`,
 
 <img src=pythonLog.PNG></img>
 
-Finished를 이용하여 가져온 데이터를 확인할 수 있다.
+`Finished`를 이용하여 가져온 데이터를 확인할 수 있다.
 
 
 ***
